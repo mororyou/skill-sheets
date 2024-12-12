@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const zProccessSchema = z
+export const zProcessSchema = z
   .union([
     z.literal('企画'),
     z.literal('要件定義'),
@@ -12,8 +12,8 @@ export const zProccessSchema = z
   ])
   .readonly();
 
-export const zProccesses = z.array(zProccessSchema);
+export const zProcesses = z.array(zProcessSchema);
 
-export type Process = z.infer<typeof zProccessSchema>;
+export type Process = z.infer<typeof zProcessSchema>;
 
-export type Processes = z.infer<typeof zProccesses>;
+export type Processes = z.infer<typeof zProcesses>;
