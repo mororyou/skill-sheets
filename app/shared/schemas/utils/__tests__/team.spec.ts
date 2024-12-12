@@ -6,7 +6,7 @@ describe('zTeamSchema', () => {
     const validTeam = {
       fieldId: 'teams',
       director: 1,
-      enginner: 2,
+      engineer: 2,
       designer: 3,
       programmer: 4,
     };
@@ -17,7 +17,7 @@ describe('zTeamSchema', () => {
     const invalidTeam = {
       fieldId: 'teams',
       director: 'not a number',
-      enginner: 2,
+      engineer: 2,
       designer: 3,
       programmer: 4,
     };
@@ -28,7 +28,7 @@ describe('zTeamSchema', () => {
     const nullableTeam = {
       fieldId: 'teams',
       director: null,
-      enginner: null,
+      engineer: null,
       designer: null,
       programmer: null,
     };
@@ -39,7 +39,7 @@ describe('zTeamSchema', () => {
     const undefinedTeam = {
       fieldId: 'teams',
       director: undefined,
-      enginner: undefined,
+      engineer: undefined,
       designer: undefined,
       programmer: undefined,
     };
