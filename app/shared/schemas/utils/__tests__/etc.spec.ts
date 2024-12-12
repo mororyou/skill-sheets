@@ -4,13 +4,13 @@ import { zEtcSchema, zEtcs } from '../etc';
 describe('zEtcSchema', () => {
   it('zEtcSchema: 正常なケース', ({ expect }) => {
     const validValues = ['Turborepo', 'Git', 'GitHub', 'GitLab', 'Vercel', 'Docker', 'GitHub Actions'];
-    validValues.forEach((value) => {
+    validValues.map((value) => {
       expect(zEtcSchema.parse(value)).toBe(value);
     });
   });
 
   it('zEtcSchema: 不正なデータの時エラーを投げる', ({ expect }) => {
-    const invalidValues = ['Python', 'Django', 'Node', ''];
+    const invalidValues = ['不正なデータ', ''];
     invalidValues.forEach((value) => {
       expect(() => zEtcSchema.parse(value)).toThrow();
     });

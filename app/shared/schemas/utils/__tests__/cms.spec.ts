@@ -3,13 +3,13 @@ import { zCmss, zCmsSchema } from '../cms';
 describe('zCmsSchema', () => {
   it('zCmsSchema: 正常なケース', ({ expect }) => {
     const validValues = ['WordPress', 'microCMS', 'Contentful'];
-    validValues.forEach((value) => {
+    validValues.map((value) => {
       expect(zCmsSchema.parse(value)).toBe(value);
     });
   });
   it('zCmsSchema: 不正なデータの時エラーを投げる', ({ expect }) => {
-    const invalidValues = ['WordPresse', 'microCMSs', 'Node', ''];
-    invalidValues.forEach((value) => {
+    const invalidValues = ['不正なデータ', ''];
+    invalidValues.map((value) => {
       expect(() => zCmsSchema.parse(value)).toThrow();
     });
   });

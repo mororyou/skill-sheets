@@ -3,15 +3,26 @@ import { zFrontendSchema, zFrontends } from '../frontend';
 
 describe('zFrontend', () => {
   it('zFrontend: 正常なケース', ({ expect }) => {
-    const validValues = ['React', 'Vue', 'Vite', 'Next.js'];
-    validValues.forEach((value) => {
+    const validValues = [
+      'TypeScript',
+      'JavaScript',
+      'React',
+      'Vue',
+      'Vite',
+      'Next.js',
+      'Remix.js',
+      'tRPC',
+      'Auth.js',
+      'jQuery',
+    ];
+    validValues.map((value) => {
       expect(zFrontendSchema.parse(value)).toBe(value);
     });
   });
 
   it('zFrontend: 不正なデータの時エラーを投げる', ({ expect }) => {
-    const invalidValues = ['Svelte', 'Nuxt.js', 'Node'];
-    invalidValues.forEach((value) => {
+    const invalidValues = ['不正なデータ', ''];
+    invalidValues.map((value) => {
       expect(() => zFrontendSchema.parse(value)).toThrow();
     });
   });

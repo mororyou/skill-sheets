@@ -4,14 +4,14 @@ import { zBackends, zBackendSchema } from '../backend';
 describe('zBackendSchema', () => {
   it('zBackendSchema: 正常なケース', ({ expect }) => {
     const validValues = ['php', 'Laravel', 'CakePHP', 'Express'];
-    validValues.forEach((value) => {
+    validValues.map((value) => {
       expect(zBackendSchema.parse(value)).toBe(value);
     });
   });
 
   it('zBackendSchema: 不正なデータの時エラーを投げる', ({ expect }) => {
     const invalidValues = ['Python', 'Django', 'Node', ''];
-    invalidValues.forEach((value) => {
+    invalidValues.map((value) => {
       expect(() => zBackendSchema.parse(value)).toThrow();
     });
   });
