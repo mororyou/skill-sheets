@@ -12,8 +12,4 @@ export const zProcessSchema = z
   ])
   .readonly();
 
-export const zProcesses = z.array(zProcessSchema);
-
 export type Process = z.infer<typeof zProcessSchema>;
-
-export type Processes = z.infer<typeof zProcesses>;

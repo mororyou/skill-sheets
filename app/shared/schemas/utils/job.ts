@@ -10,8 +10,4 @@ export const zJobSchema = z
   ])
   .readonly();
 
-export const zJobs = z.array(zJobSchema);
-
 export type Job = z.infer<typeof zJobSchema>;
-
-export type Jobs = z.infer<typeof zJobs>;
